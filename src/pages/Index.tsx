@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 
 interface Pattern {
@@ -306,6 +308,21 @@ const Index = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Самые точные графические паттерны для определения разворота тренда с высокой надёжностью
           </p>
+          
+          <div className="flex items-center justify-center gap-4 pt-4">
+            <Button asChild size="lg" className="gap-2">
+              <Link to="/">
+                <Icon name="BarChart3" size={18} />
+                Паттерны
+              </Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="gap-2">
+              <Link to="/candles">
+                <Icon name="Flame" size={18} />
+                Свечи
+              </Link>
+            </Button>
+          </div>
         </header>
 
         <Tabs value={filter} onValueChange={(v) => setFilter(v as any)} className="mb-8">
